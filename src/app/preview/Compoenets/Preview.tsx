@@ -6,7 +6,7 @@ import { PlusIcon , TrashIcon} from '@heroicons/react/24/outline';
 
 import { useState ,useEffect ,ChangeEvent} from 'react';
 
-export default function Home() {
+export default function Preview() {
     const [previewImg, setPreviewImg] = useState<any>([])
     useEffect(()=>{
     },[previewImg])
