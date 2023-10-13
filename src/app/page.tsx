@@ -1,10 +1,18 @@
 'use client'
 
 export default function Home() {
+  const buttonType = 
+  [
+    {"src": '/timer', "text": "Timer Link"},
+    {"src": '/preview', "text": "Preview"},
+  ]
   return (
    <div>
-        <button className="myBtn" onClick={()=>{location.href = '/timer'}}>Timer Link</button>
-        <button className="myBtn" onClick={()=>{location.href = '/preview'}}>Preview</button>
+    {   buttonType && buttonType.map((e,i)=>{
+          return(<button key={i} className="myBtn" onClick={()=>{location.href = e.src}}>{e.text}</button>)
+        })
+        
+    }
    </div>
   )
 }
