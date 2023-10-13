@@ -1,19 +1,23 @@
 'use client'
 import { useEffect ,useState} from "react"
-export default function Timer()
+type DateTime =
 {
-    const [hour,setHour] = useState(0)
-    const [minute, setMinute] = useState(0)
-    const [second, setSecond] =useState(0)
-    useEffect(()=>{
+    currentTime : number
+}
+export default function Timer({currentTime} : DateTime)
+{
+    const [hour,setHour] = useState(0)// 1시간
+    const [minute, setMinute] = useState(0)// 분
+    const [second, setSecond] =useState(0)// 초
 
-        
+    useEffect(()=>{    
     },[hour,minute,second])
+
+    const endDate = new Date(currentTime + 86400000)
     function timer()
     {   
-        const twentyfourhourinmili = 86400000;
         const rightNow = new Date(Date.now())
-        const endDate = new Date(1697164567725 + twentyfourhourinmili)
+        
         const endAt =  (endDate.getTime()-rightNow.getTime())
         let secondcal = Math.floor(endAt/1000)
         let minutecal = Math.floor(secondcal/60)
@@ -24,11 +28,7 @@ export default function Timer()
         setMinute(minutecal)
         setSecond(secondcal)
     }
+    // 매 초마다 업데이트 진행
     setInterval(timer,1000)
-    return(
-        <div>
-            <div>시간 {`${hour}h:${minute}m:${second}s`}</div>
-            <button onClick={()=>console.log()}> Test Date</button>
-        </div>
-    )
+    return( <div>시간 {`${hour}h:${minute}m:${second}s`}</div>)
 }

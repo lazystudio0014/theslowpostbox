@@ -1,5 +1,5 @@
 'use client'
-import Preview from "./Compoenets/Preview"
+import Preview from "./compoenets/Preview"
 export default function Page() {
     return (
       <Preview/>
