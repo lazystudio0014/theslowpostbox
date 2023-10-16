@@ -5,6 +5,8 @@ export default function Home() {
   [
     {"src": '/timer', "text": "Timer"},
     {"src": '/preview', "text": "Preview"},
+    {"src": '/apiTester', "text": "apiText"},
+    {"src": '/hooks', "text": "Hooks"},
   ]
   return (
    <div className="container mx-[20%] mt-[8%]">
@@ -13,6 +15,7 @@ export default function Home() {
           return(<button key={i} className="myBtn" onClick={()=>{location.href = e.src}}>{e.text}</button>)
         })
     }
+
    </div>
   )
 }
